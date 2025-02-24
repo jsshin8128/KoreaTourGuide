@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울 관광지 혼잡도 예측</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-10">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800">서울 관광지 혼잡도 예측 대시보드</h1>
+            <p class="text-lg text-gray-600 mt-2">요일별 예상 방문자수 및 혼잡도를 확인하세요!</p>
+        </div>
+
+        <!-- 선택란 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            <div id="site-select" class="bg-white rounded-lg shadow-md p-6"></div>
+            <div id="weekday-select" class="bg-white rounded-lg shadow-md p-6"></div>
+        </div>
+
+        <!-- 예측 결과 -->
+        <div class="mt-10 bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold text-gray-800">예측 결과</h2>
+            <div id="prediction-result" class="mt-4 text-xl text-gray-700"></div>
+        </div>
+
+        <!-- 혼잡도 랭킹 및 대안 추천지 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-gray-800">혼잡도 랭킹</h2>
+                <div id="ranking" class="mt-4 text-lg text-gray-700"></div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-gray-800">대안 추천지</h2>
+                <div id="alternative" class="mt-4 text-lg text-gray-700"></div>
+            </div>
+        </div>
+
+        <!-- 그래프 시각화 -->
+        <div class="mt-10 bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold text-gray-800">요일별 혼잡도 시각화</h2>
+            <div id="graph" class="mt-4"></div>
+        </div>
+    </div>
+</body>
+</html>
