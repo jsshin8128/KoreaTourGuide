@@ -6,13 +6,13 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 tourist_sites = {
-    "경복궁": 400000,
-    "덕수궁": 100000,
-    "서울대공원": 300000,
-    "예술의전당": 50000,
-    "종묘": 80000,
-    "창경궁": 30000,
-    "창덕궁": 30000
+    "경복궁": 94070,
+    "덕수궁": 20401,
+    "서울대공원": 1984065,
+    "예술의전당": 50734,
+    "종묘": 40652,
+    "창경궁": 47126,
+    "창덕궁": 119765
 }
 
 weekday_map = {
@@ -140,12 +140,16 @@ if all_predictions:
 
     # 혼잡도 상태에 따라 색상 결정
     def get_congestion_status(congestion_level):
-        if congestion_level < 30:
-            return "여유", "green"
+        if congestion_level < 10:
+            return "매우 여유", "green"
+        elif congestion_level < 30:
+            return "여유", "lightgreen"
+        elif congestion_level < 50:
+            return "약간 붐빔", "yellow"
         elif congestion_level < 70:
-            return "보통", "orange"
+            return "혼잡", "orange"
         else:
-            return "혼잡", "red"
+            return "매우 혼잡", "red"
 
     # 혼잡도 랭킹
     st.markdown("### 혼잡도 랭킹 (낮은 순)")
